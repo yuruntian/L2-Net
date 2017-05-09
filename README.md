@@ -6,5 +6,5 @@ This is a Matlab implementation of the L2-Net feature descriptor presented in [1
 
 Requirements
 ======
-MatConvNet 1.0-beta23 or higher(
+MatConvNet 1.0-beta18 or higher(
 http://www.vlfeat.org/matconvnet/).
