@@ -12,7 +12,7 @@ else
     testPatch = rand(32,32,1,10,'single');
 end
 
-desFloat = cal_L2Net_des(rootPath,trainSet,flagCS,flagAug,testPatch,batchSize,flalonggGPU);%output a 128(or 256)*N matrix, each colum is a descriptor
+desFloat = cal_L2Net_des(rootPath,trainSet,flagCS,flagAug,testPatch,batchSize,flagGPU);%output a 128(or 256)*N matrix, each colum is a descriptor
 
 desBinary = desFloat;
 desBinary(find(desBinary>0)) = 1;
