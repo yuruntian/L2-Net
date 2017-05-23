@@ -28,11 +28,22 @@ function out = cal_L2Net_des(rootPath,trainSet,flagCS,flagAug,testPatch,batchSiz
         end
     end
 load(netName)
+
+for i=1:numel(net.layers)
+    if strcmp(net.layers{i}.type, 'bnormPair')
+        net.layers{i}.type = 'bnorm';
+    end
+end
+for i=1:numel(netCen.layers)
+    if strcmp(netCen.layers{i}.type, 'bnormPair')
+        netCen.layers{i}.type = 'bnorm';
+    end
+end
+
 if flagGPU
     net = vl_simplenn_move(net, 'gpu') ;
     netCen = vl_simplenn_move(netCen, 'gpu') ;
 end
-
 
 
 numPatch = size(testPatch,4);
