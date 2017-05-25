@@ -28,6 +28,8 @@ function out = cal_L2Net_des(rootPath,trainSet,flagCS,flagAug,testPatch,batchSiz
         end
     end
 load(netName)
+net = vl_simplenn_tidy(net) ;
+netCen = vl_simplenn_tidy(netCen) ;
 
 for i=1:numel(net.layers)
     if strcmp(net.layers{i}.type, 'bnormPair')
