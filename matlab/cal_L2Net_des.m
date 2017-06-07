@@ -28,8 +28,7 @@ function out = cal_L2Net_des(rootPath,trainSet,flagCS,flagAug,testPatch,batchSiz
         end
     end
 load(netName)
-net = vl_simplenn_tidy(net) ;
-netCen = vl_simplenn_tidy(netCen) ;
+
 
 for i=1:numel(net.layers)
     if strcmp(net.layers{i}.type, 'bnormPair')
@@ -41,7 +40,8 @@ for i=1:numel(netCen.layers)
         netCen.layers{i}.type = 'bnorm';
     end
 end
-
+net = vl_simplenn_tidy(net) ;
+netCen = vl_simplenn_tidy(netCen) ;
 if flagGPU
     net = vl_simplenn_move(net, 'gpu') ;
     netCen = vl_simplenn_move(netCen, 'gpu') ;
