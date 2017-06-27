@@ -1,6 +1,6 @@
 run(fullfile('vl_setupnn.m')) ;
 rootPath = pwd;
-trainSet = 'LIB';
+trainSet = 'LIB';%'YOS','ND','HP'
 flagCS = 1;
 flagAug = 1;
 flagGPU = 1;
