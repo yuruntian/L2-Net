@@ -54,7 +54,7 @@ if flagCS
         testPatchCen = testPatch(17:48,17:48,1,:);
         testPatch = imresize(testPatch,0.5);
     else
-        error('patch size does match')
+        error('patch size does not match')
         return
     end
     testPatchCen = bsxfun(@minus, testPatchCen, pixMeanCen);
